@@ -18,9 +18,9 @@ function FeedbackItem({item, handleDelete}) {
   */
 
       // <Card reverse={true}>
-  const handleClick = (id) => {
-    console.log(id)
-  }
+  // const handleClick = (id) => {
+  //   console.log(id)
+  // }
 
   return (
     <Card>
