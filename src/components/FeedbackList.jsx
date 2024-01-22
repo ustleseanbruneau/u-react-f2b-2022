@@ -3,18 +3,19 @@ import {useContext} from 'react'
 import FeedbackItem from './FeedbackItem'
 //import PropTypes from 'prop-types'
 import FeedbackContext from '../context/FeedbackContext'
+import Spinner from './shared/Spinner'
 
 // Moved parameters to Context API
 //function FeedbackList({feedback, handleDelete}) {
 function FeedbackList() {
-  const {feedback} = useContext(FeedbackContext)
+  const {feedback, isLoading} = useContext(FeedbackContext)
   //console.log(feedback)
 
-  if (!feedback || feedback.length === 0) {
+  if (!isLoading && (!feedback || feedback.length === 0)) {
     return <p>No feedback Yet</p>
   }
 
-  return (
+  return isLoading ? <Spinner /> : (
     <div className='feeback-list'>
       <AnimatePresence>
         {feedback.map((item) => (

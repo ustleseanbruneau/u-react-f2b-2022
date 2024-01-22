@@ -1,0 +1,31 @@
+
+
+json-server
+
+Error with latest version of json-server npm package
+  Converts id from number to string
+
+Need to use version 0.9.3
+https://github.com/typicode/json-server/issues/396
+
+Version 0.14.0 is working as expected
+
+project.json
+
+{
+  "name": "feedback-app",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:5000",
+  "dependencies": {
+
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "json-server --watch db.json --port 5000",
+    "dev": "concurrently \"npm run server\" \"npm start\" "
+  },
+
+
